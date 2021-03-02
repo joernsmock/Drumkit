@@ -11,8 +11,8 @@
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
       <entry name="!?*.aj" />
-      <entry name="!?*.tiff" />
+      <entry name="!?*.aiff" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="1.9" />
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
