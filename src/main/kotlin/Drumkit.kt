@@ -51,6 +51,25 @@ suspend fun main() {
     // val userDir = System.getProperty("user.dir")
     // println("user.dir: $userDir")
 
+    runBlocking  {
+        launch {
+            var x = 10
+            while (x>0) {
+                x -= 1
+                print("x")
+                delay(200)
+            }
+        }
+        launch {
+            var y = 10
+            while (y>0) {
+                y -= 1
+                print("y")
+                delay(200)
+            }
+    }
+
+    /*
     runBlocking {
         // here, the coroutine runs in the same thread, not in
         // a separate thread (as with "globalScope.launch")
@@ -60,4 +79,6 @@ suspend fun main() {
         launch { playBeats("x---x-x-x----x", "toms.aiff") }
         //playBeats("x-----x-----", "crash_cymbal.aiff")
     }
+
+     */
 }
