@@ -1,10 +1,10 @@
+/* Here HFKotlin uses GlobalScope.launch to create thread. */
 import java.io.File
-import javax.sound.sampled.AudioInputStream
 import javax.sound.sampled.AudioSystem
+import kotlinx.coroutines.*
 
 fun playBeats(beats: String, file: String) {
     val parts = beats.split("x")
-    println(parts)
     var count = 0
     for (part in parts) {
         count += part.length + 1
@@ -27,16 +27,16 @@ fun playSound(file: String) {
             file
         )
     )
-    println(file)
     clip.open(audioInputStream)
     clip.start()
 }
 
 fun main() {
-    val tomsString = "x-x-x-x-x-x-"
-    println(tomsString)
-    val cymbalString = "x-----x-----"
-    println(cymbalString)
-    playBeats(tomsString, "toms.aiff")
-    playBeats(cymbalString, "crash_cymbal.aiff")
+    val userDir = System.getProperty("user.dir")
+    println("user.dir: $userDir")
+
+    GlobalScope.launch {
+    playBeats("x--x--x--x--x--x-", "toms.aiff")
+    }
+    playBeats("x--------x-------", "crash_cymbal.aiff")
 }
