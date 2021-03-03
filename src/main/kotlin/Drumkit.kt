@@ -51,25 +51,27 @@ suspend fun main() {
     // val userDir = System.getProperty("user.dir")
     // println("user.dir: $userDir")
 
+    /*
     runBlocking  {
         launch {
             var x = 10
             while (x>0) {
                 x -= 1
                 print("x")
-                delay(200)
+                delay(1000)
             }
         }
         launch {
-            var y = 10
-            while (y>0) {
+            var y = 3
+            while (y > 0) {
                 y -= 1
                 print("y")
-                delay(200)
+                delay(3333)
             }
+        }
     }
+    */
 
-    /*
     runBlocking {
         // here, the coroutine runs in the same thread, not in
         // a separate thread (as with "globalScope.launch")
@@ -77,8 +79,6 @@ suspend fun main() {
         // (HFKotlin p406)
         // [isn't that the sense of coroutines in the first place?]
         launch { playBeats("x---x-x-x----x", "toms.aiff") }
-        //playBeats("x-----x-----", "crash_cymbal.aiff")
+        playBeats("x-----x-----", "crash_cymbal.aiff")
     }
-
-     */
 }
